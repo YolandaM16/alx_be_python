@@ -1,33 +1,30 @@
+#step 1: Prompt for a Single Task
 task = input("Enter the task description: ")
-priority = input("Enter the task priority (high, medium, low): ").lower()
+priority = input("Enter the task's priority (high, medium, low): ").lower()
 time_bound = input("Is the task time-sensitive? (yes or no): ").lower()
 
+# Step 2: Process the Task Based on Priority and Time Sensitivity
 match priority:
     case "high":
-<<<<<<< HEAD
-        reminder = "This is a high-priority task. "
+        message = "This is a high-priority task."
     case "medium":
-        reminder = "This is a medium-priority task. "
+        message = "This is a medium-priority task."
     case "low":
-        reminder = "This is a low-priority task. "
-=======
-        reminder ="This is a high-priority task."
-    case "medium":
-        reminder = "This is a medium-priority task."
-    case "low":
-        reminder = "This is a low-priority task."
->>>>>>> 6ea61ac750a233584f3480608b0de13d3f05d780
+        message = "This is low-priority task."
     case _:
-        reminder = "Priority not recognized. "
+        message = "Invalid priority level. Please enter high, medium, or low."
+        print(message)
+        exit()
 
+# Add time sensitivity details
 if time_bound == "yes":
-    reminder += "It requires immediate attention today!"
+    message += "It requires immediate attention today!"
+elif time_bound == "no":
+    message += "It can be scheduled for later."
 else:
-<<<<<<< HEAD
-    reminder += "You can schedule it flexibly."
-=======
-    reminder += "You can reschedule it flexibly."
->>>>>>> 6ea61ac750a233584f3480608b0de13d3f05d780
+    print("Invalid input for time sensitivity. Please enter yes or no.")
+    exit()
 
-print(f"\nReminder: {task}")
-print(reminder)
+# Step 3: Provide a Customized Reminder
+print(f"Task Remindeer: {task}")
+print(message)
