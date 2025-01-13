@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 def perform_operation(num1, num2, operation):
     """
     Perform a basic arithmetic operation on two numbers.
@@ -23,7 +23,7 @@ def perform_operation(num1, num2, operation):
         return num1 / num2
     else:
         return "Error: Invalid operation"
-=======
+
 def peform_operation(num1, num2, operation):
     """
     Perform basic arithmetic operations.
@@ -48,4 +48,3 @@ def peform_operation(num1, num2, operation):
         return num1 / num2
     else:
         return "Error: Invalid operation."
->>>>>>> d4f1100964802a946b540bb6f3779179977e202b
