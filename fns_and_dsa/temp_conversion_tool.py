@@ -1,35 +1,39 @@
-# Global Conversion Factors
+# Define global conversion factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_ = 9 / 5
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
-# Conversion Functions
+# Function to convert Fahrenheit to Celsius
 def convert_to_celsius(fahrenheit):
-    """Convert Fahrenheit to Celsius."""
-    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTORS
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
+# Function to convert Celsius to Fahrenheit:
 def convert_to_fahrenheit(celsius):
-    """Convert Celsius to Fahrenheit."""
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR)
+    return celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + 32
 
-# User Interaction
+# User interaction
 def main():
     try:
-        # Get temperature input from user
-        temperature = float(input("Enter the temperature: "))
-        unit = input("Is this in Celsius or Fahrenheit? (C/F): ").strip().upper()
+        # Get temperature input
+        temperature = float(input("Enter the temperature to convert: "))
 
-        # Determine the appropriate conversion
+        # Get temperature unit input
+        unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+
         if unit == "C":
+            # Convert Celsius to Fahrenheit
             converted = convert_to_fahrenheit(temperature)
-            print(f"{temperature}°C is equal to {converted:.2f}°F.")
+            print(f"{temperature}°C is {converted}°F")
         elif unit == "F":
+            # Converted Fahrenheit to Celsius
             converted = convert_to_celsius(temperature)
-            print(f"{temperature}°F is equal to {converted:.2f}°C.")
+            print(f"{temperature}°F is {converted}°C")
         else:
-            print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+            # Handle invalid unit input
+            print("Invalid unit. Please enter 'C' for Celsius of 'F' for Fahrenheit.")
     except ValueError:
+        # Handle invalid temperature input
         print("Invalid temperature. Please enter a numeric value.")
 
-# Run the script
+# Run the program
 if __name__ == "__main__":
     main()
