@@ -1,5 +1,5 @@
 class SimpleCalculator:
-    """A simple calculator class that supports basicarithmetic operations."""
+    """A simple calculator class that supports basic arithmetic operations."""
 
     def add(self, a, b):
         """Return the addition of a and be."""
