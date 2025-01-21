@@ -29,7 +29,7 @@ class TestSimpleCalculator(unittest.TestCase):
         """Test the division method."""
         self.assertEqual(self.calc.divide(6, 2), 3)
         self.assertEqual(self.calc.divide(-6, 2), -3)
-        self.assertEqual(self.calc.divide(-6, -2), 3) # Division by zero should return None
+        self.assertEqual(self.calc.divide(-6, -2), 3) 
 
         # Test dividing by zero
         self.assertIsNone(self.calc.divide(10, 0))
