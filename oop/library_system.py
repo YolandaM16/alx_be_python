@@ -7,17 +7,17 @@ class Book:
         self.author = author
 
     def __str__(self):
-        return f"Book: {self.title} by {self.author}"
+        return f"Title: {self.title}, Author: {self.author}"
 
 
 class EBook(Book):
     """Class representing an e-book, inheriting from Book."""
     def __init__(self, title: str, author: str, file_size: int):
         super().__init__(title, author)
-        self.file_size = file_size  # in kilobytes (KB)
+        self.file_size = file_size  # in megabytes
 
     def __str__(self):
-        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
+        return f"{super().__str__()}, File Size: {self.file_size} MB"
 
 
 class PrintBook(Book):
@@ -27,7 +27,7 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+        return f"{super().__str__()}, Page Count: {self.page_count}"
 
 
 class Library:
@@ -49,3 +49,4 @@ class Library:
         else:
             for index, book in enumerate(self.books, start=1):
                 print(f"{index}. {book}")
+
