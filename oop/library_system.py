@@ -14,7 +14,7 @@ class EBook(Book):
     """Class representing an e-book, inheriting from Book."""
     def __init__(self, title: str, author: str, file_size: int):
         super().__init__(title, author)
-        self.file_size = file_size  # in megabytes
+        self.file_size = file_size  
 
     def __str__(self):
         return f"{super().__str__()}, File Size: {self.file_size} KB"
@@ -49,4 +49,3 @@ class Library:
         else:
             for index, book in enumerate(self.books, start=1):
                 print(f"{index}. {book}")
-
